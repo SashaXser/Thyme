@@ -2280,6 +2280,7 @@ void BaseHeightMapRenderObjClass::Update_Shoreline_Tile(int x, int y, int border
             ShorelineTile *tiles = new ShorelineTile[m_shorelineBlendTileSize + 512];
             memcpy(tiles, m_shorelineTiles, m_shorelineBlendTileSize * sizeof(ShorelineTile));
             delete[] m_shorelineTiles;
+            m_shorelineTiles = nullptr;
             m_shorelineTiles = tiles;
             m_shorelineBlendTileSize += 512;
         }
